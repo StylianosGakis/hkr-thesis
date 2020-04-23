@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BenchmarkApplication</string>
+    <string name="number_of_iterations">Number of iterations</string>
+    <string name="fannkuch">Fannkuch</string>
+    <string name="kotlin">kotlin</string>
+    <string name="java">java</string>
+    <string name="result">result</string>
+</resources>
