@@ -21,21 +21,11 @@ sealed class BenchmarkResult {
 
     data class MemoryResult(
         val memoryAllocationCount: Int,
-        val memoryAllocationSize: Int,
-        val memoryBytesPerObject: Double
+        val memoryAllocationSize: Int
     ) : BenchmarkResult()
 }
 
-/*fun BenchmarkResult.SpeedResult.detailedString() = "Average: %.4f, min: %.4f, max: %.4f"
-    .format(
-        averageTime.nanosToMilliseconds(),
-        minTime.nanosToMilliseconds(),
-        maxTime.nanosToMilliseconds()
-    )*/
-
-
-
 fun BenchmarkResult.MemoryResult.detailedString() =
-    "mem count: $memoryAllocationCount, mem alloc size: $memoryAllocationSize, mem bytes per object: $memoryBytesPerObject"
+    "mem count: $memoryAllocationCount, mem size: $memoryAllocationSize"
 
 fun Long.nanosToMilliseconds() = this.toDouble() / 1_000_000

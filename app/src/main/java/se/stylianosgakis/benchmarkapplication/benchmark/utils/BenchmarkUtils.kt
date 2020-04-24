@@ -26,15 +26,7 @@ fun benchmarkMemory(benchmark: () -> Any): List<BenchmarkResult> {
     Debug.stopAllocCounting()
     val memoryAllocCount = Debug.getThreadAllocCount()
     val memoryAllocSize = Debug.getThreadAllocSize()
-    val memoryBytesPerObject = memoryAllocSize.toDouble() / memoryAllocCount
-    //TODO Fix this
-    return listOf(
-        BenchmarkResult.MemoryResult(
-            memoryAllocCount,
-            memoryAllocSize,
-            memoryBytesPerObject
-        )
-    )
+    return listOf(BenchmarkResult.MemoryResult(memoryAllocCount, memoryAllocSize))
 }
 
 fun benchmarkSpeed(benchmark: () -> Any): List<BenchmarkResult> {
@@ -87,6 +79,11 @@ fun writeToFile(results: List<BenchmarkResult>, writer: FileWriter) {
                 .append("Average: ${speedResultsInMilliseconds.average()}")
         }
         is BenchmarkResult.MemoryResult -> {
+            val memoryResults = results.map { it as BenchmarkResult.MemoryResult }
+            val memoryResultsStrings =
+                memoryResults.map { "${it.memoryAllocationCount} | ${it.memoryAllocationSize}" }
+            writer.append("Memory footprint shown as:\ncount of objects allocated | size of objects allocated\n")
+                .append(memoryResultsStrings.joinToString(separator = "\n"))
         }
     }
 }

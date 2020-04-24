@@ -5,4 +5,6 @@
     <string name="kotlin">kotlin</string>
     <string name="java">java</string>
     <string name="result">result</string>
+    <string name="speed">Speed</string>
+    <string name="memory">Memory</string>
 </resources>
