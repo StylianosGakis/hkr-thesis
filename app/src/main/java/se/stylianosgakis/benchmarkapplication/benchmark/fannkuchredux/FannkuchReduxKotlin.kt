@@ -9,7 +9,6 @@ class FannkuchReduxKotlin {
     }
 
     fun benchmark(size: Int): ResultPair {
-        //return Pair(checksum, maxFlipCount)
         val listOfPermutations = getAllPermutations(size)
         var totalChecksum = 0
         var maxRotations = 0
