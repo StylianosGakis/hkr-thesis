@@ -25,9 +25,8 @@ class FannkuchReduxKotlin {
         var rotations = 0
         var firstNumber = array.first()
         while (firstNumber != 1) {
-            var firstHalf = mutableArray.copyOfRange(0, firstNumber)
+            val firstHalf = mutableArray.copyOfRange(0, firstNumber)
             firstHalf.reverse()
-            firstHalf = firstHalf.toList().toIntArray()
             val secondHalf = mutableArray.copyOfRange(firstNumber, mutableArray.size)
             mutableArray = firstHalf + secondHalf
             rotations++
