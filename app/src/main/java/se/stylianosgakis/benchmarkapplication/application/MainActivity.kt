@@ -31,7 +31,27 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
         setContentView(binding.root)
         requestStoragePermission()
         setupObservers()
+        setupClickListeners()
+    }
 
+    private fun setupObservers() {
+        benchmarking.observe(this) { benchmarking ->
+            binding.progressBar.setVisible(benchmarking)
+            binding.fannkuchJavaMemory.isEnabled = benchmarking.not()
+            binding.fannkuchJavaSpeed.isEnabled = benchmarking.not()
+            binding.fannkuchKotlinMemory.isEnabled = benchmarking.not()
+            binding.fannkuchKotlinSpeed.isEnabled = benchmarking.not()
+            binding.nBodyJavaMemory.isEnabled = benchmarking.not()
+            binding.nBodyJavaSpeed.isEnabled = benchmarking.not()
+            binding.nBodyKotlinMemory.isEnabled = benchmarking.not()
+            binding.nBodyKotlinSpeed.isEnabled = benchmarking.not()
+        }
+    }
+
+    private fun setupClickListeners() {
+        /************/
+        /* Fannkuch */
+        /************/
         binding.fannkuchKotlinSpeed.setOnClickListener {
             activityBenchmark(
                 BenchmarkType.SpeedType,
@@ -60,15 +80,36 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 BenchmarkLanguage.Java
             )
         }
-    }
-
-    private fun setupObservers() {
-        benchmarking.observe(this) { benchmarking ->
-            binding.progressBar.setVisible(benchmarking)
-            binding.fannkuchJavaMemory.isEnabled = benchmarking.not()
-            binding.fannkuchJavaSpeed.isEnabled = benchmarking.not()
-            binding.fannkuchKotlinMemory.isEnabled = benchmarking.not()
-            binding.fannkuchKotlinSpeed.isEnabled = benchmarking.not()
+        /**********/
+        /* N-Body */
+        /**********/
+        binding.nBodyKotlinSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.NBody,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.nBodyKotlinMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.NBody,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.nBodyJavaSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.NBody,
+                BenchmarkLanguage.Java
+            )
+        }
+        binding.nBodyJavaMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.NBody,
+                BenchmarkLanguage.Java
+            )
         }
     }
 

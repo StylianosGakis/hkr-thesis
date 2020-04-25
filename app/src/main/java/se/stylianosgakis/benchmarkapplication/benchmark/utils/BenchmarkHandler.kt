@@ -4,10 +4,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import se.stylianosgakis.benchmarkapplication.benchmark.fannkuchredux.FannkuchReduxJava
 import se.stylianosgakis.benchmarkapplication.benchmark.fannkuchredux.FannkuchReduxKotlin
+import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyJava
+import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyKotlin
 
 object BenchmarkHandler {
     private val fannkuchReduxJava = FannkuchReduxJava()
     private val fannkuchReduxKotlin = FannkuchReduxKotlin()
+    private val nBodyJava = NBodyJava()
+    private val nBodyKotlin = NBodyKotlin()
 
     suspend fun runBenchmark(
         benchmarkType: BenchmarkType,
@@ -23,6 +27,12 @@ object BenchmarkHandler {
                             BenchmarkType.MemoryType -> benchmarkMemory(fannkuchReduxKotlin::benchmark)
                         }
                     }
+                    BenchmarkClass.NBody -> {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(nBodyJava::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(nBodyKotlin::benchmark)
+                        }
+                    }
                 }
             }
             BenchmarkLanguage.Java -> {
@@ -31,6 +41,12 @@ object BenchmarkHandler {
                         when (benchmarkType) {
                             BenchmarkType.SpeedType -> benchmarkSpeed(fannkuchReduxJava::benchmark)
                             BenchmarkType.MemoryType -> benchmarkMemory(fannkuchReduxJava::benchmark)
+                        }
+                    }
+                    BenchmarkClass.NBody ->  {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(nBodyJava::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(nBodyKotlin::benchmark)
                         }
                     }
                 }

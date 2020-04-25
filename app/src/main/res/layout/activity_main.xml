@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/fannkuch_kotlin_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fannkuch"
@@ -43,7 +43,7 @@
         android:text="@string/speed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/fannkuch_kotlin_memory"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_text_view" />
 
     <Button
         android:id="@+id/fannkuch_kotlin_memory"
@@ -52,7 +52,34 @@
         android:text="@string/memory"
         app:layout_constraintEnd_toStartOf="@+id/fannkuch_kotlin_speed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_text_view" />
+
+    <TextView
+        android:id="@+id/n_body_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_memory" />
+
+    <Button
+        android:id="@+id/n_body_kotlin_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/n_body_kotlin_memory"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_text_view" />
+
+    <Button
+        android:id="@+id/n_body_kotlin_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/n_body_kotlin_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_text_view" />
 
     <Space
         android:id="@+id/space"
@@ -60,7 +87,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fannkuch_kotlin_memory" />
+        app:layout_constraintTop_toBottomOf="@id/n_body_kotlin_memory" />
 
     <TextView
         android:id="@+id/title_java"
@@ -73,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/space" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/fannkuch_java_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/fannkuch"
@@ -88,7 +115,7 @@
         android:text="@string/speed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/fannkuch_java_memory"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_text_view" />
 
     <Button
         android:id="@+id/fannkuch_java_memory"
@@ -97,16 +124,33 @@
         android:text="@string/memory"
         app:layout_constraintEnd_toStartOf="@+id/fannkuch_java_speed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_text_view" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/n_body_java_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/result"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/n_body"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_memory" />
+
+    <Button
+        android:id="@+id/n_body_java_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/n_body_java_memory"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_java_text_view" />
+
+    <Button
+        android:id="@+id/n_body_java_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/n_body_java_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_java_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

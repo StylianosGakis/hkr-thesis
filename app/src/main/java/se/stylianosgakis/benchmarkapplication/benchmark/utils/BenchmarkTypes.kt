@@ -7,6 +7,7 @@ sealed class BenchmarkLanguage {
 
 sealed class BenchmarkClass {
     object Faankuch : BenchmarkClass()
+    object NBody : BenchmarkClass()
 }
 
 sealed class BenchmarkType {
