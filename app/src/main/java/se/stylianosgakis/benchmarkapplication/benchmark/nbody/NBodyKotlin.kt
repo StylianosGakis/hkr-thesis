@@ -18,13 +18,7 @@ class NBodyKotlin {
 }
 
 class NBodySystemKotlin {
-    private val bodies: Array<BodyKotlin> = arrayOf(
-        sun,
-        jupiter,
-        saturn,
-        uranus,
-        neptune
-    )
+    private val bodies: Array<BodyKotlin> = arrayOf(sun, jupiter, saturn, uranus, neptune)
 
     init {
         var px = 0.0

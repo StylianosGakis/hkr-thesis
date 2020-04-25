@@ -29,7 +29,7 @@ object BenchmarkHandler {
                     }
                     BenchmarkClass.NBody -> {
                         when (benchmarkType) {
-                            BenchmarkType.SpeedType -> benchmarkSpeed(nBodyJava::benchmark)
+                            BenchmarkType.SpeedType -> benchmarkSpeed(nBodyKotlin::benchmark)
                             BenchmarkType.MemoryType -> benchmarkMemory(nBodyKotlin::benchmark)
                         }
                     }
@@ -46,7 +46,7 @@ object BenchmarkHandler {
                     BenchmarkClass.NBody ->  {
                         when (benchmarkType) {
                             BenchmarkType.SpeedType -> benchmarkSpeed(nBodyJava::benchmark)
-                            BenchmarkType.MemoryType -> benchmarkMemory(nBodyKotlin::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(nBodyJava::benchmark)
                         }
                     }
                 }
