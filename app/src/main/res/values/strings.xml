@@ -8,4 +8,5 @@
     <string name="speed">Speed</string>
     <string name="memory">Memory</string>
     <string name="n_body">N-Body</string>
+    <string name="fasta">fasta</string>
 </resources>

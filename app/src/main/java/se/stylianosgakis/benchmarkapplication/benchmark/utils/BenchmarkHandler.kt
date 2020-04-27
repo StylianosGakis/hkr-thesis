@@ -4,6 +4,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import se.stylianosgakis.benchmarkapplication.benchmark.fannkuchredux.FannkuchReduxJava
 import se.stylianosgakis.benchmarkapplication.benchmark.fannkuchredux.FannkuchReduxKotlin
+import se.stylianosgakis.benchmarkapplication.benchmark.fasta.FastaJava
+import se.stylianosgakis.benchmarkapplication.benchmark.fasta.FastaKotlin
 import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyJava
 import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyKotlin
 
@@ -12,6 +14,8 @@ object BenchmarkHandler {
     private val fannkuchReduxKotlin = FannkuchReduxKotlin()
     private val nBodyJava = NBodyJava()
     private val nBodyKotlin = NBodyKotlin()
+    private val fastaJava = FastaJava()
+    private val fastaKotlin = FastaKotlin()
 
     suspend fun runBenchmark(
         benchmarkType: BenchmarkType,
@@ -33,6 +37,12 @@ object BenchmarkHandler {
                             BenchmarkType.MemoryType -> benchmarkMemory(nBodyKotlin::benchmark)
                         }
                     }
+                    BenchmarkClass.Fasta -> {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(fastaKotlin::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(fastaKotlin::benchmark)
+                        }
+                    }
                 }
             }
             BenchmarkLanguage.Java -> {
@@ -43,10 +53,16 @@ object BenchmarkHandler {
                             BenchmarkType.MemoryType -> benchmarkMemory(fannkuchReduxJava::benchmark)
                         }
                     }
-                    BenchmarkClass.NBody ->  {
+                    BenchmarkClass.NBody -> {
                         when (benchmarkType) {
                             BenchmarkType.SpeedType -> benchmarkSpeed(nBodyJava::benchmark)
                             BenchmarkType.MemoryType -> benchmarkMemory(nBodyJava::benchmark)
+                        }
+                    }
+                    BenchmarkClass.Fasta -> {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(fastaJava::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(fastaJava::benchmark)
                         }
                     }
                 }

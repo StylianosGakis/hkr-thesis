@@ -35,16 +35,20 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     }
 
     private fun setupObservers() {
-        benchmarking.observe(this) { benchmarking ->
-            binding.progressBar.setVisible(benchmarking)
-            binding.fannkuchJavaMemory.isEnabled = benchmarking.not()
-            binding.fannkuchJavaSpeed.isEnabled = benchmarking.not()
-            binding.fannkuchKotlinMemory.isEnabled = benchmarking.not()
-            binding.fannkuchKotlinSpeed.isEnabled = benchmarking.not()
-            binding.nBodyJavaMemory.isEnabled = benchmarking.not()
-            binding.nBodyJavaSpeed.isEnabled = benchmarking.not()
-            binding.nBodyKotlinMemory.isEnabled = benchmarking.not()
-            binding.nBodyKotlinSpeed.isEnabled = benchmarking.not()
+        benchmarking.observe(this) { isBenchmarking ->
+            binding.progressBar.setVisible(isBenchmarking)
+            binding.fannkuchJavaMemory.isEnabled = isBenchmarking.not()
+            binding.fannkuchJavaSpeed.isEnabled = isBenchmarking.not()
+            binding.fannkuchKotlinMemory.isEnabled = isBenchmarking.not()
+            binding.fannkuchKotlinSpeed.isEnabled = isBenchmarking.not()
+            binding.nBodyJavaMemory.isEnabled = isBenchmarking.not()
+            binding.nBodyJavaSpeed.isEnabled = isBenchmarking.not()
+            binding.nBodyKotlinMemory.isEnabled = isBenchmarking.not()
+            binding.nBodyKotlinSpeed.isEnabled = isBenchmarking.not()
+            binding.fastaJavaMemory.isEnabled = isBenchmarking.not()
+            binding.fastaJavaSpeed.isEnabled = isBenchmarking.not()
+            binding.fastaKotlinMemory.isEnabled = isBenchmarking.not()
+            binding.fastaKotlinSpeed.isEnabled = isBenchmarking.not()
         }
     }
 
@@ -108,6 +112,37 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             activityBenchmark(
                 BenchmarkType.MemoryType,
                 BenchmarkClass.NBody,
+                BenchmarkLanguage.Java
+            )
+        }
+        /*********/
+        /* Fasta */
+        /*********/
+        binding.fastaKotlinSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.Fasta,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.fastaKotlinMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.Fasta,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.fastaJavaSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.Fasta,
+                BenchmarkLanguage.Java
+            )
+        }
+        binding.fastaJavaMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.Fasta,
                 BenchmarkLanguage.Java
             )
         }

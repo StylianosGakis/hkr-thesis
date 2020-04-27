@@ -102,6 +102,7 @@ private fun generateFileName(
     }}_${when (benchmarkClass) {
         BenchmarkClass.Faankuch -> "FAANKUCH"
         BenchmarkClass.NBody -> "NBODY"
+        BenchmarkClass.Fasta -> "FASTA"
     }}_${when (benchmarkLanguage) {
         BenchmarkLanguage.Kotlin -> "KOTLIN"
         BenchmarkLanguage.Java -> "JAVA"

@@ -37,21 +37,21 @@
         app:layout_constraintTop_toBottomOf="@+id/title_kotlin" />
 
     <Button
-        android:id="@+id/fannkuch_kotlin_speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/speed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/fannkuch_kotlin_memory"
-        app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_text_view" />
-
-    <Button
         android:id="@+id/fannkuch_kotlin_memory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/memory"
         app:layout_constraintEnd_toStartOf="@+id/fannkuch_kotlin_speed"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_text_view" />
+
+    <Button
+        android:id="@+id/fannkuch_kotlin_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fannkuch_kotlin_memory"
         app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_text_view" />
 
     <TextView
@@ -64,15 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/fannkuch_kotlin_memory" />
 
     <Button
-        android:id="@+id/n_body_kotlin_speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/speed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/n_body_kotlin_memory"
-        app:layout_constraintTop_toBottomOf="@+id/n_body_text_view" />
-
-    <Button
         android:id="@+id/n_body_kotlin_memory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,13 +72,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/n_body_text_view" />
 
+    <Button
+        android:id="@+id/n_body_kotlin_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/n_body_kotlin_memory"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_text_view" />
+
+    <TextView
+        android:id="@+id/fasta_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fasta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_kotlin_memory" />
+
+    <Button
+        android:id="@+id/fasta_kotlin_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/fasta_kotlin_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fasta_text_view" />
+
+    <Button
+        android:id="@+id/fasta_kotlin_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fasta_kotlin_memory"
+        app:layout_constraintTop_toBottomOf="@+id/fasta_text_view" />
+
     <Space
         android:id="@+id/space"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/n_body_kotlin_memory" />
+        app:layout_constraintTop_toBottomOf="@id/fasta_kotlin_memory" />
 
     <TextView
         android:id="@+id/title_java"
@@ -109,21 +136,21 @@
         app:layout_constraintTop_toBottomOf="@+id/title_java" />
 
     <Button
-        android:id="@+id/fannkuch_java_speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/speed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/fannkuch_java_memory"
-        app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_text_view" />
-
-    <Button
         android:id="@+id/fannkuch_java_memory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/memory"
         app:layout_constraintEnd_toStartOf="@+id/fannkuch_java_speed"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_text_view" />
+
+    <Button
+        android:id="@+id/fannkuch_java_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fannkuch_java_memory"
         app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_text_view" />
 
     <TextView
@@ -136,6 +163,15 @@
         app:layout_constraintTop_toBottomOf="@+id/fannkuch_java_memory" />
 
     <Button
+        android:id="@+id/n_body_java_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/n_body_java_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_java_text_view" />
+
+    <Button
         android:id="@+id/n_body_java_speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -144,13 +180,31 @@
         app:layout_constraintStart_toEndOf="@id/n_body_java_memory"
         app:layout_constraintTop_toBottomOf="@+id/n_body_java_text_view" />
 
+    <TextView
+        android:id="@+id/fasta_java_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fasta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n_body_java_memory" />
+
     <Button
-        android:id="@+id/n_body_java_memory"
+        android:id="@+id/fasta_java_memory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/memory"
-        app:layout_constraintEnd_toStartOf="@+id/n_body_java_speed"
+        app:layout_constraintEnd_toStartOf="@+id/fasta_java_speed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/n_body_java_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/fasta_java_text_view" />
+
+    <Button
+        android:id="@+id/fasta_java_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fasta_java_memory"
+        app:layout_constraintTop_toBottomOf="@+id/fasta_java_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

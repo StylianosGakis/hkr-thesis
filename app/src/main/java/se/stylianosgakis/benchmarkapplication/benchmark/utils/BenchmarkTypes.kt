@@ -8,6 +8,7 @@ sealed class BenchmarkLanguage {
 sealed class BenchmarkClass {
     object Faankuch : BenchmarkClass()
     object NBody : BenchmarkClass()
+    object Fasta : BenchmarkClass()
 }
 
 sealed class BenchmarkType {
@@ -25,8 +26,5 @@ sealed class BenchmarkResult {
         val memoryAllocationSize: Int
     ) : BenchmarkResult()
 }
-
-fun BenchmarkResult.MemoryResult.detailedString() =
-    "mem count: $memoryAllocationCount, mem size: $memoryAllocationSize"
 
 fun Long.nanosToMilliseconds() = this.toDouble() / 1_000_000
