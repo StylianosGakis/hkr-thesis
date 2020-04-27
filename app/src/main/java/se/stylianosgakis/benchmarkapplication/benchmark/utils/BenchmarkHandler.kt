@@ -8,6 +8,8 @@ import se.stylianosgakis.benchmarkapplication.benchmark.fasta.FastaJava
 import se.stylianosgakis.benchmarkapplication.benchmark.fasta.FastaKotlin
 import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyJava
 import se.stylianosgakis.benchmarkapplication.benchmark.nbody.NBodyKotlin
+import se.stylianosgakis.benchmarkapplication.benchmark.reversecomplement.ReverseComplementJava
+import se.stylianosgakis.benchmarkapplication.benchmark.reversecomplement.ReverseComplementKotlin
 
 object BenchmarkHandler {
     private val fannkuchReduxJava = FannkuchReduxJava()
@@ -16,6 +18,8 @@ object BenchmarkHandler {
     private val nBodyKotlin = NBodyKotlin()
     private val fastaJava = FastaJava()
     private val fastaKotlin = FastaKotlin()
+    private val reverseComplementJava = ReverseComplementJava()
+    private val reverseComplementKotlin = ReverseComplementKotlin()
 
     suspend fun runBenchmark(
         benchmarkType: BenchmarkType,
@@ -43,6 +47,12 @@ object BenchmarkHandler {
                             BenchmarkType.MemoryType -> benchmarkMemory(fastaKotlin::benchmark)
                         }
                     }
+                    BenchmarkClass.ReverseComplement -> {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(reverseComplementKotlin::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(reverseComplementKotlin::benchmark)
+                        }
+                    }
                 }
             }
             BenchmarkLanguage.Java -> {
@@ -63,6 +73,12 @@ object BenchmarkHandler {
                         when (benchmarkType) {
                             BenchmarkType.SpeedType -> benchmarkSpeed(fastaJava::benchmark)
                             BenchmarkType.MemoryType -> benchmarkMemory(fastaJava::benchmark)
+                        }
+                    }
+                    BenchmarkClass.ReverseComplement -> {
+                        when (benchmarkType) {
+                            BenchmarkType.SpeedType -> benchmarkSpeed(reverseComplementJava::benchmark)
+                            BenchmarkType.MemoryType -> benchmarkMemory(reverseComplementJava::benchmark)
                         }
                     }
                 }

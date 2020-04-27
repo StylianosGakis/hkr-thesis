@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             binding.fastaJavaSpeed.isEnabled = isBenchmarking.not()
             binding.fastaKotlinMemory.isEnabled = isBenchmarking.not()
             binding.fastaKotlinSpeed.isEnabled = isBenchmarking.not()
+            binding.reverseComplementKotlinSpeed.isEnabled = isBenchmarking.not()
+            binding.reverseComplementKotlinMemory.isEnabled = isBenchmarking.not()
+            binding.reverseComplementJavaSpeed.isEnabled = isBenchmarking.not()
+            binding.reverseComplementJavaMemory.isEnabled = isBenchmarking.not()
         }
     }
 
@@ -143,6 +147,37 @@ class MainActivity : AppCompatActivity(), CoroutineScope by MainScope() {
             activityBenchmark(
                 BenchmarkType.MemoryType,
                 BenchmarkClass.Fasta,
+                BenchmarkLanguage.Java
+            )
+        }
+        /**********************/
+        /* Reverse Complement */
+        /**********************/
+        binding.reverseComplementKotlinSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.ReverseComplement,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.reverseComplementKotlinMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.ReverseComplement,
+                BenchmarkLanguage.Kotlin
+            )
+        }
+        binding.reverseComplementJavaSpeed.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.SpeedType,
+                BenchmarkClass.ReverseComplement,
+                BenchmarkLanguage.Java
+            )
+        }
+        binding.reverseComplementJavaMemory.setOnClickListener {
+            activityBenchmark(
+                BenchmarkType.MemoryType,
+                BenchmarkClass.ReverseComplement,
                 BenchmarkLanguage.Java
             )
         }

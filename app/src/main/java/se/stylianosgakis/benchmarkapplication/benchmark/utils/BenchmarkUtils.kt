@@ -103,6 +103,7 @@ private fun generateFileName(
         BenchmarkClass.Faankuch -> "FAANKUCH"
         BenchmarkClass.NBody -> "NBODY"
         BenchmarkClass.Fasta -> "FASTA"
+        BenchmarkClass.ReverseComplement -> "REVERSECOMPLEMENT"
     }}_${when (benchmarkLanguage) {
         BenchmarkLanguage.Kotlin -> "KOTLIN"
         BenchmarkLanguage.Java -> "JAVA"

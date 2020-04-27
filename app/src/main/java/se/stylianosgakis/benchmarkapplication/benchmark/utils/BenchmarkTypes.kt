@@ -9,6 +9,7 @@ sealed class BenchmarkClass {
     object Faankuch : BenchmarkClass()
     object NBody : BenchmarkClass()
     object Fasta : BenchmarkClass()
+    object ReverseComplement : BenchmarkClass()
 }
 
 sealed class BenchmarkType {

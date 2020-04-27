@@ -108,13 +108,40 @@
         app:layout_constraintStart_toEndOf="@id/fasta_kotlin_memory"
         app:layout_constraintTop_toBottomOf="@+id/fasta_text_view" />
 
+    <TextView
+        android:id="@+id/reverse_complement_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reverse_complement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fasta_kotlin_memory" />
+
+    <Button
+        android:id="@+id/reverse_complement_kotlin_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/reverse_complement_kotlin_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reverse_complement_text_view" />
+
+    <Button
+        android:id="@+id/reverse_complement_kotlin_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reverse_complement_kotlin_memory"
+        app:layout_constraintTop_toBottomOf="@+id/reverse_complement_text_view" />
+
     <Space
         android:id="@+id/space"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fasta_kotlin_memory" />
+        app:layout_constraintTop_toBottomOf="@id/reverse_complement_kotlin_memory" />
 
     <TextView
         android:id="@+id/title_java"
@@ -206,5 +233,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/fasta_java_memory"
         app:layout_constraintTop_toBottomOf="@+id/fasta_java_text_view" />
+
+    <TextView
+        android:id="@+id/reverse_complement_java_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reverse_complement"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fasta_java_memory" />
+
+    <Button
+        android:id="@+id/reverse_complement_java_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memory"
+        app:layout_constraintEnd_toStartOf="@+id/reverse_complement_java_speed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reverse_complement_java_text_view" />
+
+    <Button
+        android:id="@+id/reverse_complement_java_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reverse_complement_java_memory"
+        app:layout_constraintTop_toBottomOf="@+id/reverse_complement_java_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
