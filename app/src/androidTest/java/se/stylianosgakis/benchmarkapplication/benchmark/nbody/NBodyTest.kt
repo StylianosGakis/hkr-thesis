@@ -6,7 +6,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class NBodyJavaTest {
+class NBodyTest {
     @Test
     fun nbody() {
         // Check equality up to the 9th most significant decimal point
