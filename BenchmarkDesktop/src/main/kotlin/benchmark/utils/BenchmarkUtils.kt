@@ -11,14 +11,13 @@ const val ITERATIONS = 100
 // Disregard first 20% of the iterations, to ensure more consistent results
 const val WARMED_UP_ITERATIONS = 80
 
-fun benchmarkMemory(benchmark: () -> Any): List<BenchmarkResult> {
-    val runtime = Runtime.getRuntime()
-    runtime.gc()
-    val memoryBefore = runtime.totalMemory() - runtime.freeMemory()
+/**
+ * Memory benchmarks for desktop are done through the use of JProfiler 11.1.2, therefore just the benchmark is run here
+ * and null is returned as the result does not get calculated from the code.
+ */
+fun benchmarkMemory(benchmark: () -> Any): List<BenchmarkResult>? {
     benchmark()
-    val memoryAfter = runtime.totalMemory() - runtime.freeMemory()
-    val memoryUsed = memoryAfter - memoryBefore
-    return listOf(BenchmarkResult.MemoryResult(1, memoryUsed.toInt()))
+    return null
 }
 
 fun benchmarkSpeed(benchmark: () -> Any): List<BenchmarkResult> {

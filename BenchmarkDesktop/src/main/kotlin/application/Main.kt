@@ -26,13 +26,13 @@ val benchmarkMap = mapOf(
 )
 
 fun main() {
-    runAll()
-    //runMenu()
+    //runAll()
+    runMenu()
 }
 
 fun runAll() {
     for (benchmarkTriple in benchmarkMap.values) {
-        if (benchmarkTriple.first is BenchmarkType.SpeedType) {
+        if (benchmarkTriple.first is BenchmarkType.MemoryType) {
             activityBenchmark(benchmarkTriple.first, benchmarkTriple.second, benchmarkTriple.third)
         }
     }
@@ -81,10 +81,12 @@ private fun activityBenchmark(
     println("Running: $benchmarkType, $benchmarkClass, $benchmarkLanguage")
     val results = runBenchmark(benchmarkType, benchmarkClass, benchmarkLanguage)
     println("Results: $results")
-    saveResultToFile(
-        benchmarkType,
-        benchmarkClass,
-        benchmarkLanguage,
-        results
-    )
+    results?.let {
+        saveResultToFile(
+            benchmarkType,
+            benchmarkClass,
+            benchmarkLanguage,
+            results
+        )
+    }
 }

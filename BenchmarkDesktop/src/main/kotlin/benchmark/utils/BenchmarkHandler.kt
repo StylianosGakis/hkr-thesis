@@ -23,7 +23,7 @@ object BenchmarkHandler {
         benchmarkType: BenchmarkType,
         benchmarkClass: BenchmarkClass,
         benchmarkLanguage: BenchmarkLanguage
-    ): List<BenchmarkResult> {
+    ): List<BenchmarkResult>? {
         return when (benchmarkLanguage) {
             BenchmarkLanguage.Kotlin -> {
                 when (benchmarkClass) {
